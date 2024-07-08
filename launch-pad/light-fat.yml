@@ -1,0 +1,10 @@
+bootstraps=['/dns/bootnode.1.lightclient.hex.avail.so/tcp/37000/p2p/12D3KooWBMwfo5qyoLQDRat86kFcGAiJ2yxKM63rXHMw2rDuNZMA']
+full_node_ws=['wss://rpc-hex-devnet.avail.tools/ws']
+ot_collector_endpoint='http://otel.lightclient.hex.avail.so:4317'
+genesis_hash='9d5ea6a5d7631e13028b684a1a0078e3970caa78bd677eaecaf2160304f174fb'
+operation_mode='client'
+origin='external'
+block_matrix_partition = "1/20"
+http_server_port = 5999
+secret_key = { seed="392936" }
+port = 35000
