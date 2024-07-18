@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AVAIL_TAG=v1.9.1
+AVAIL_TAG=v1.11.0-rc1
 AVAIL_LC_BIN=https://github.com/availproject/avail-light/releases/download/$AVAIL_TAG/avail-light-linux-amd64.tar.gz
 
 wget --no-check-certificate $AVAIL_LC_BIN -O avail-lc.tar.gz
