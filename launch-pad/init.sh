@@ -11,6 +11,8 @@ mv avail-light-linux-amd64 avail-light
 num_folders=25
 
 # Function to set parameters in the YAML file based on mode
+
+# Function to set parameters in the YAML file based on mode
 update_yaml() {
     folder_name=$1
     mode=$2
@@ -40,11 +42,15 @@ update_yaml() {
             http_server_port=$((5999 + i))
             port=$((35000 + i))
             seed=$((392936 + RANDOM % 1000))  
+            partition=$((i))
 
             echo "Running in fat mode for $folder_name"
+            
             perl -pi -e "s/http_server_port = 5999/http_server_port = $http_server_port/" "$folder_name/$config_file"
             perl -pi -e "s/port = 35000/port = $port/" "$folder_name/$config_file"
             perl -pi -e "s/secret_key = { seed=\"392936\" }/secret_key = { seed=\"$seed\" }/" "$folder_name/$config_file"
+            block_matrix_partition="block_matrix_partition = \"$partition/40\""
+            echo $block_matrix_partition >> "$folder_name/$config_file"
             ;;
         *)
             echo "Unknown mode: $mode"
